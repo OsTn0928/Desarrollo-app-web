@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #000000;
+    color: white;
+}
+
+/* Logo */
+.logo-izq img {
+    height: 50px;
+}
+
+/* Navegación */
+nav .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav .nav-list li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+    font-weight: bolder;
+}
+
+nav .nav-list li a:hover {
+    color: #f39c12;
+}
+
+/* Íconos */
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icons div {
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.icons div:hover {
+    color: #f39c12;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: #f0f0f0;
+}
+
+.operations {
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.operations button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #f0ac3e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.operations button:hover {
+    background-color: #f79f11;
+    transform: scale(1.05);
+}
+
+.operations button:active {
+    background-color: #b3720b;
+    transform: scale(0.98);
+}
+
