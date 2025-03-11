@@ -69,7 +69,6 @@ main {
 .operations {
     padding: 20px;
     background-color: rgb(105, 105, 105);
-    border-radius: 12px;
     text-align: center;
     justify-content: center;
 }
