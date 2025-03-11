@@ -55,7 +55,7 @@ nav .nav-list li a:hover {
 }
 
 .icons div:hover {
-    color: #f39c12;
+    color: #1a1a1a;
 }
 
 main {
@@ -68,9 +68,8 @@ main {
 
 .operations {
     padding: 20px;
-    background-color: white;
+    background-color: rgb(105, 105, 105);
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     justify-content: center;
 }
@@ -81,7 +80,7 @@ main {
     font-size: 16px;
     font-weight: bold;
     color: white;
-    background-color: #f0ac3e;
+    background-color: #444444;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -89,12 +88,12 @@ main {
 }
 
 .operations button:hover {
-    background-color: #f79f11;
+    background-color: #000000;
     transform: scale(1.05);
 }
 
 .operations button:active {
-    background-color: #b3720b;
+    background-color: #000000;
     transform: scale(0.98);
 }
 

@@ -6,6 +6,7 @@ let booleano = true;
 let objeto = { nombre: "Vicente", edad: 17, ocupacion: "Estudiante" };
 let indefinida;
 let nulo = null;
+let array = ["papa"  ,"pollo",  "cabellos de angel",  "Zapallo"]
 
 // Función para realizar una operación simple
 function operacion(a, b) {
@@ -13,6 +14,11 @@ function operacion(a, b) {
 }
 
 // Funciones para mostrar cada variable
+
+function mostrarArray() {
+    alert("Receta Lista: " + array)
+}
+
 function mostrarNumeroEntero() {
     alert("Número Entero: " + numeroEntero);
 }
