@@ -1,0 +1,41 @@
+* {
+    margin: 2dvh;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+button {
+    background-color: #50a6c0;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 1dvh;
+    box-shadow: 1px 1px 3px #888888;
+}
+
+button:hover {
+    background-color: #0052ce;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+button:active {
+    background-color: #3d8e9e;
+    transform: scale(1);
+}
+
+p {
+    font-size: 3dvh;
+    color: #333;
+    margin: 1dvh 0;
+}
+
+
