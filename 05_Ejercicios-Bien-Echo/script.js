@@ -14,7 +14,7 @@ function declararVariables() {
 // Ejercicio 2: Asignación de valores
 // Instrucciones: Completa la función para asignar el valor de 'var1' a 'var2' y luego muestra el valor de 'var2'.
 function asignarValores() {
-    let var1 = prompt("Ingresa un valor para var1:");
+    let var1 = prompt("Ingresa un valor: ");
     let var2 = var1; // Asignación de valores
     alert(`El valor de var2 es: ${var2}`);
 }
