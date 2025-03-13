@@ -38,12 +38,14 @@ function realizarOperaciones() {
 // Ejercicio 4: Manipulación de cadenas
 // Instrucciones: Completa la función para construir un mensaje utilizando las variables 'direccion' y 'n_casa'.
 // Luego, muestra la longitud del mensaje y el antepenúltimo carácter en el mensaje.
+
 function manipularCadenas() {
     let direccion = prompt("Ingresar tu dirección:");
     let n_casa = prompt("Ingresar el número de tu casa:");
-    let mensaje = `Vives en ${direccion}, número ${n_casa}.`;
+    let mensaje = `Vives en ${direccion}, número ${n_casa}`;
     let longitud = mensaje.length;
-    let antepenultimo = mensaje.charAt(longitud - 3);
+    let antepenultimo = mensaje[longitud - 3]; 
 
     alert(`Mensaje construido: ${mensaje}\nLongitud del mensaje: ${longitud}\nAntepenúltimo carácter: ${antepenultimo}`);
 }
+
