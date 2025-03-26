@@ -20,28 +20,12 @@ function calcularIMC() {
 }
 
 function calcularNotas() {
-    // Pedir al usuario que ingrese las notas y convertirlas a enteros
-    let nota1 = parseInt(prompt("Ingresa la primera nota (1-7):"));
-    let nota2 = parseInt(prompt("Ingresa la segunda nota (1-7):"));
-    let nota3 = parseInt(prompt("Ingresa la tercera nota (1-7):"));
-
-    // Verificar que las entradas sean números válidos entre 1 y 7
-    if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3) ||
-        nota1 < 1 || nota1 > 7 || 
-        nota2 < 1 || nota2 > 7 || 
-        nota3 < 1 || nota3 > 7) {
-        document.getElementById("resultado").innerText = "❌ Error: Ingresa notas válidas entre 1 y 7.";
-        return; // Salir de la función si hay un error
-    }
-
-    // Calcular el promedio
+    let nota1 = parseFloat(prompt("Ingresa la primera nota:"));
+    let nota2 = parseFloat(prompt("Ingresa la segunda nota:"));
+    let nota3 = parseFloat(prompt("Ingresa la tercera nota:"));
     let promedio = (nota1 + nota2 + nota3) / 3;
-
-    // Determinar si aprueba o reprueba
-    let mensaje = (promedio >= 4) ? "✅ Aprobado con promedio: " : "❌ Reprobado con promedio: ";
-    
     // Mostrar el resultado en la página
-    document.getElementById("resultado").innerText = mensaje + promedio.toFixed(2);
+    alert("Tu promedio es: " + promedio);
 }
 
 
