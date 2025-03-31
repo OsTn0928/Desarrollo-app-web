@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios en JavaScript</title>
+</head>
+<body>
+    <h2>Tabla de Multiplicar</h2>
+    <input type="number" id="numero" placeholder="Ingresa un número">
+    <button onclick="generarTabla()">Generar Tabla</button>
+    <pre id="resultadoTabla"></pre>
+
+    <h2>Sumar N números</h2>
+    <input type="number" id="cantidad" placeholder="Cantidad de números">
+    <button onclick="sumarNumeros()">Sumar</button>
+    <p id="resultadoSuma"></p>
+
+    <h2>Números Pares en un Rango</h2>
+    <input type="number" id="inicio" placeholder="Inicio">
+    <input type="number" id="fin" placeholder="Fin">
+    <button onclick="mostrarPares()">Mostrar Pares</button>
+    <p id="resultadoPares"></p>
+
+    <script>
+        function generarTabla() {
+            let num = parseInt(document.getElementById("numero").value);
+            let resultado = "";
+            for (let i = 1; i <= 10; i++) {
+                resultado += `${num} x ${i} = ${num * i}\n`;
+            }
+            document.getElementById("resultadoTabla").textContent = resultado;
+        }
+
+        function sumarNumeros() {
+            let n = parseInt(document.getElementById("cantidad").value);
+            let suma = 0;
+            for (let i = 0; i < n; i++) {
+                let numero = parseInt(prompt(`Ingresa el número ${i + 1}:`));
+                suma += numero;
+            }
+            document.getElementById("resultadoSuma").textContent = `Suma total: ${suma}`;
+        }
+
+        function mostrarPares() {
+            let inicio = parseInt(document.getElementById("inicio").value);
+            let fin = parseInt(document.getElementById("fin").value);
+            let pares = [];
+            for (let i = inicio; i <= fin; i++) {
+                if (i % 2 === 0) {
+                    pares.push(i);
+                }
+            }
+            document.getElementById("resultadoPares").textContent = `Números pares: ${pares.join(", ")}`;
+        }
+    </script>
+</body>
+</html>
