@@ -1,48 +1,49 @@
-/* Estilo general */
+/* Estilo general para todos los elementos */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina relleno por defecto */
+    box-sizing: border-box; /* Incluye padding y border dentro del tamaño total */
+    font-family: 'Poppins', sans-serif; /* Fuente principal */
 }
 
+/* Estilo general del cuerpo de la página */
 body {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Fondo con degradado oscuro */
+    color: #fff; /* Texto blanco */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Dirección de los elementos: vertical */
+    align-items: center; /* Centrado horizontal */
+    justify-content: center; /* Centrado vertical */
+    height: 100vh; /* Altura del viewport */
     text-align: center;
-    padding-top: 80px;
+    padding-top: 80px; /* Espacio superior para que el header fijo no lo tape */
 }
 
-/* Estilo del header */
+/* Encabezado fijo en la parte superior */
 header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    width: 100%; /* Ocupa todo el ancho */
+    background: rgba(0, 0, 0, 0.8); /* Fondo semitransparente negro */
     padding: 20px;
     text-align: center;
     font-size: 1.5rem;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+    z-index: 1000; /* Siempre por encima de otros elementos */
 }
 
 header h1 {
     font-size: 2.2rem;
 }
 
-/* Estilo del main */
+/* Contenedor principal (main) */
 main {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.15); /* Fondo blanco semitransparente */
     padding: 50px;
-    border-radius: 15px;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4); /* Sombra */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque al fondo */
     margin: 30px 0;
     width: 50%;
 }
@@ -50,12 +51,13 @@ main {
 main h1 {
     font-size: 2.5rem;
     margin-bottom: 25px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1.5px; /* Espaciado entre letras */
 }
 
+/* Estilo del botón */
 button {
-    background: linear-gradient(90deg, #ff9800, #ff5722);
+    background: linear-gradient(90deg, #ff9800, #ff5722); /* Fondo con degradado naranja a rojo */
     border: none;
     padding: 15px 35px;
     font-size: 1.3rem;
@@ -63,31 +65,32 @@ button {
     color: #fff;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s ease, background 0.3s ease;
-    box-shadow: 0px 4px 10px rgba(255, 152, 0, 0.5);
+    transition: transform 0.2s ease, background 0.3s ease; /* Animaciones al pasar el mouse */
+    box-shadow: 0px 4px 10px rgba(255, 152, 0, 0.5); /* Sombra anaranjada */
 }
 
 button:hover {
-    background: linear-gradient(90deg, #e68900, #e64a19);
-    transform: scale(1.05);
+    background: linear-gradient(90deg, #e68900, #e64a19); /* Cambia el color al pasar el mouse */
+    transform: scale(1.05); /* Aumenta tamaño ligeramente */
 }
 
+/* Estilo del párrafo del resultado */
 #resultado {
     font-size: 1.7rem;
     margin-top: 25px;
     font-weight: bold;
-    color: #ffeb3b;
-    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    color: #ffeb3b; /* Amarillo vibrante */
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para mejorar legibilidad */
 }
 
-/* Estilo del footer */
+/* Estilo del pie de página */
 footer {
     position: fixed;
     bottom: 10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Centrado horizontal exacto */
     font-size: 1.2rem;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
     padding: 12px 25px;
     border-radius: 8px;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
