@@ -1,0 +1,27 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #2C3E50;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 5dvh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+#container-master-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+#title-profile {
+    margin-right: 20dvh;
+}
