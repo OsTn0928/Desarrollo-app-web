@@ -6,39 +6,62 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <nav>
-            <h1 id="title-profile">Perfil</h1>
-            
-            <div id="container-master-nav">
-                <div id="container-nav-1">
-                    <u id="text-nav">
-                        <p id="texto-1">Inicio</p>
-                    </u>
-                </div>
-
-                <div id="container-nav-2">
-                    <u id="text-nav">
-                        <p id="texto-2">Mi Perfil</p>
-                    </u>
-                </div>
-
-                <div id="container-nav-3">
-                    <u id="text-nav">
-                        <p id="texto-3">Conexiones</p>
-                    </u>
-                </div>
-
-                <div id="container-nav-4">
-                    <u id="text-nav">
-                        <p id="texto-4">Cerrar</p>
-                    </u>
-                </div>
-
-            </div>
+        <h1 class="title-master">Perfil</h1>
+        <nav class="nav-master">
+            <ul class="nav-list">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#" id="MiPerfil-a">Mi perfil</a></li>
+                <li><a href="#">Conexiones</a></li>
+                <button class="logout-button">Cerrar sesión</button>
+            </ul>
         </nav>
     </header>
+    <main>
+        <section>
+            <div id="block-profile">
+                <div id="section-part-up"></div>
+                <div id="section-part-down">
+                    <img id="img-profile" src="img/user-icon.png" alt="#">
+                    <h2 id="name">Jane Doe</h2>
+                    <h3 id="location-profile">Bergen, Noruega</h3>
+                    <p id="info-specialty">Desarrolladora Frontend</p>
+                    <p id="info-handling">Conocimientos en HTML, CSS, JavaScript</p>
+                    <a id="edit-profile" href="#">&#x2699; Editar Perfil</a>
+                </div>
+            </div>
+        </section>
+        
+        <aside>
+            <div id="block-aside-up">
+                <div id="part-block-aside-up">
+                    <h2 id="texth2-aside-up">Solicitudes de conexión</h2>
+                    <button id="button-aside-up">Ver Todas</button>
+                </div>
+                <div id="part-block-aside-down">
+                    <div id="cages-block-up">
+                        <img id="img-block-aside-up-profile" src="img/user-icon.png" alt="#">
+                        <p>Steve Jobs</p>
+                        <img id="img-block-aside-down-check" src="img/check-icon.png" alt="accept">
+                        <img src="img/delete-1-icon.png" alt="decline">
+                    </div>
+                </div>
+            </div>
+
+            <div id="block-aside-down">
+                <div id="part-block-aside-up">
+
+                </div>
+                <div id="part-block-aside-down">
+
+                </div>
+            </div>
+        </aside>
+        
+    </main>
 
 </body>
+
 </html>
