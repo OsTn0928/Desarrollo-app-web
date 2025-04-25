@@ -21,6 +21,7 @@ header {
     justify-content: space-between;
     padding: 1dvh 2dvh;
     font-size: 2dvh;
+    margin-bottom: 5dvh;
 }
 
 .title-master {
@@ -60,7 +61,12 @@ header {
 
 .logout-button:hover {
     background-color: #2980b9;
-    transition: 0.5s;
+    transition: 1s;
+}
+
+.logout-button:not(:hover) {
+    background-color: #3798DC;
+    transition: 1s;
 }
 
 main {
@@ -76,10 +82,11 @@ section {
     align-items: center;
     justify-content: center;
     padding: 2dvh;
+    margin-right: 5dvh;
 }
 
 #block-profile {
-    box-shadow: 0dvh 0dvh 60dvh 5dvh rgba(0, 0, 0, 0.1);
+    box-shadow: 0dvh 0dvh 2dvh 0.33dvh rgba(0, 0, 0, 0.1);
     border-radius: 2dvh;
     text-align: center;
 }
@@ -127,3 +134,98 @@ section {
     color: #0A6BBE;
     transition: 0.5s;
 }
+
+aside {
+    align-items: center;
+    justify-content: center;
+    border-radius: 2dvh;
+
+#block-aside-up {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0dvh 0dvh 2dvh 0.33dvh rgba(0, 0, 0, 0.1);
+    border-radius: 2dvh;
+    padding-bottom: 4dvh;
+}
+
+#part-block-aside-up {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2dvh;
+    padding: 2.5dvh;
+}
+
+#texth2-aside-up {
+    font-size: 3dvh;
+    font-weight: bolder;
+}
+
+#button-aside-up {
+    background-color: #EDF0F2;
+    border: solid 0.3dvh #2BA4EF;
+    color: #2BA4EF;
+    padding: 1dvh 1.9dvh;
+    border-radius: 1dvh;
+    cursor: pointer;
+    font-size: 2dvh;
+    font-weight: 300;
+}
+#button-aside-up:hover {
+    background-color: #2BA4EF;
+    color: white;
+    transition: 0.5s; 
+}
+#button-aside-up:not(:hover) {
+    background-color: #EDF0F2;
+    color: #2BA4EF;
+    transition: 0.5s;
+}
+
+#part-block-aside-down {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2dvh;
+}
+
+#part-block-aside-down img {
+    width: 5dvh;
+    height: auto;
+    margin-right: 1dvh;
+}
+
+#cages-block-up {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2dvh;
+}
+
+#cages-block-up p {
+    font-size: 2.5dvh;
+    font-weight: 300;
+    margin-right: 9dvh;
+}
+
+#part-block-aside-down-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#part-block-aside-down-2 img {
+    width: 5dvh;
+    height: auto;
+    margin-right: 1dvh;
+}
+#part-block-aside-down-2 p {
+    font-size: 2.5dvh;
+    font-weight: 300;
+    margin-right: 9dvh;
+}}
+
