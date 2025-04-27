@@ -72,7 +72,7 @@ header {
 main {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
@@ -81,7 +81,6 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2dvh;
     margin-right: 5dvh;
 }
 
@@ -139,6 +138,7 @@ aside {
     align-items: center;
     justify-content: center;
     border-radius: 2dvh;
+}
 
 #block-aside-up {
     display: flex;
@@ -146,6 +146,7 @@ aside {
     box-shadow: 0dvh 0dvh 2dvh 0.33dvh rgba(0, 0, 0, 0.1);
     border-radius: 2dvh;
     padding-bottom: 4dvh;
+    margin-bottom: 2dvh;
 }
 
 #part-block-aside-up {
@@ -223,9 +224,48 @@ aside {
     height: auto;
     margin-right: 1dvh;
 }
+
 #part-block-aside-down-2 p {
     font-size: 2.5dvh;
     font-weight: 300;
     margin-right: 9dvh;
-}}
+}
 
+#block-aside-down {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0dvh 0dvh 2dvh 0.33dvh rgba(0, 0, 0, 0.1);
+    border-radius: 2dvh;
+    padding-bottom: 4dvh;
+}
+
+#part-block-aside-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2dvh;
+}
+
+#cages-block-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2dvh;
+}
+
+#row-block-up {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2dvh;
+    padding: 2.5dvh;
+}
+
+#row-block-up p {
+    font-size: 2.5dvh;
+    font-weight: 300;
+    margin-right: 9dvh;
+}
