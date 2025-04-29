@@ -22,6 +22,8 @@ header {
     padding: 1dvh 2dvh;
     font-size: 2dvh;
     margin-bottom: 5dvh;
+    padding-left: 32dvh;
+    padding-right: 32dvh;
 }
 
 .title-master {
