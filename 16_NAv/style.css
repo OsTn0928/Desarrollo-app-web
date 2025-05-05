@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+
+header {
+    background-color: #333333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1dvh 2dvh;
+    font-size: 2dvh;
+    margin-bottom: 5dvh;
+}
+
+.title-master {
+    font-weight: bold;
+    font-size: 5dvh;
+    padding: 2dvh;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    gap: 2dvh;
+}
+.nav-list  a{
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 3.5dvh;
+}
+
+#MiPerfil-a {
+    font-weight: 600;
+}
+
+.logout-button {
+    background-color: #3798DC;
+    border: solid 0.6dvh black;
+    color: white;
+    padding: 0.8dvh 1.7dvh;
+    cursor: pointer;
+    font-size: 3.5dvh;
+    box-shadow: black 0.8dvh 0.8dvh 0dvh;
+
+}
+
+.logout-button:hover {
+    background-color: #2980b9;
+    transition: 1s;
+}
+
+.logout-button:not(:hover) {
+    background-color: #3798DC;
+    transition: 1s;
+}
