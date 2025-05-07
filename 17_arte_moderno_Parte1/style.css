@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0px;
+    outline: solid 1px red;
+}
+
+.container{
+    display: flex;
+    padding: 0px 150px;
+}
+
+.column-container{
+    height: 100%;
+    flex:1;
+}
+
+.partes-de-la-izquierda {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.secciones-de-la-parte-izquierda-3 {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+}
+
+.secciones-de-la-parte-izquierda-3 div {
+    margin: 1.3dvh;
+}
+
+.secciones-de-la-parte-izquierda-4 {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.secciones-de-la-parte-izquierda-4 div {
+    margin: 1.3dvh;
+}
+
+.relleno-a-1 {
+    width: 52dvh;
+    height: 100%;
+    background-color: #b2b5b4;
+}
+.relleno-a-2 {
+    width: 50dvh;
+    height: 30%;
+    background-color: #b2b5b4;
+}
+
+.relleno-b-1 {
+    width: 23vh;
+    height: 23vh;
+    background-color: #b2b5b4;
+}
+
+.relleno-c-1 {
+    background-color: #b2b5b4;
+    width: 25vh;
+    height: 100%;
+}
+
+.relleno-d-2 {
+    background-color: #b2b5b4;
+    width: 95%;
+    height: 21.7dvh;
+}
+
+.secciones-de-la-parte-izquierda-1 {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.secciones-de-la-parte-izquierda-1 div {
+    margin: 1.3dvh;
+}
+
+.secciones-de-la-parte-izquierda-2 {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+}
+
+.secciones-de-la-parte-izquierda-2 div {
+    margin: 1.3dvh;
+}
