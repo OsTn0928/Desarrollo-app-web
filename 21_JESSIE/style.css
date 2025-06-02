@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #e9f5f2;
+}
+
+.contenedor {
+    display: flex;
+    height: 100vh;
+}
+
+/* NAV */
+.nav {
+    background-image: url(img/98.webp);
+    background-size: cover;
+    background-position: 40% 50%;
+    background-image: linear-gradient(to bottom, #000000, transparent), url(img/98.webp);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    min-width: 200px;
+    max-width: 300px;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav li {
+    margin: 12px 0;
+}
+
+.nav a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #00923d;
+    transition: 0.3s;
+    font-weight: 700;
+}
+
+.nav a:hover {
+    color: #ffffff;
+    background-color: #00662a;
+    padding: 3px;
+}
+
+/* CONTENIDO */
+.contenido {
+    margin-left: 300px; /* Ajusta según el ancho de la barra lateral */
+    flex: 4;
+    padding: 30px;
+    background-color: #fdfdfd;
+}
+
+.contenido h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.seccion {
+    margin-bottom: 50px;
+}
+
+.seccion h2,
+.seccion h1 {
+    margin-bottom: 20px;
+    color: #263238;
+}
+
+.seccion p {
+    font-size: 1.1rem;
+    color: #455a64;
+}
+
+.seccion-inicio {
+    background-color: #e8f5e9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.tarjeta {
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s;
+    cursor: pointer;
+}
+
+.tarjeta:hover {
+    transform: scale(1.05);
+    background-color: #e0f7fa;
+}
+
+/* Proporciones */
+.tarjeta-walter {
+    background-image: url(img/Walter_2008.webp);
+    background-position: 50% 40%;
+    color: #ffffff;
+    text-shadow: #000 1px 1px 2px;
+    flex: 2;
+}
+
+.tarjeta-jesse {
+    background-image: url(img/images.jfif);
+    background-position: 50% 40%;
+    color: #000;
+    flex: 2;
+}
+
+.tarjeta-saul {
+    background-color: #ffeb3b;
+    color: #000;
+    flex: 2;
+}
+
+.tarjeta-gus {
+    background-color: #ef9a9a;
+    color: #000;
+    flex: 1;
+}
+
+.tarjeta-hank {
+    background-color: #ce93d8;
+    color: #1a1a1a;
+    flex: 1;
+}
+
+.tarjeta-skyler {
+    background-color: #ffe082;
+    color: #000;
+    flex: 1;
+}
+
+.tarjeta-rv {
+    background-color: #bcaaa4;
+    color: #000;
+    flex: 1;
+}
+
+.tarjeta-locacion {
+    background-color: #b0bec5;
+    color: #000;
+    flex: 1;
+}
+
+.tarjeta-frase {
+    background-color: #c5e1a5;
+    color: #000;
+    flex: 1;
+}
+
+.tarjeta-lab {
+    background-color: #90caf9;
+    color: #000;
+    flex: 2;
+}
