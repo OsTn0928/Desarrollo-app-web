@@ -65,7 +65,9 @@ body {
     margin-left: 300px; /* Ajusta según el ancho de la barra lateral */
     flex: 4;
     padding: 30px;
-    background-color: #fdfdfd;
+    background-image: url(img/0vP82EWKFmjSc0I1BHsDuRF3IdRm623DMajQGKsyZGQ.webp);
+    background-size: cover;
+    background-position: 0% 50%;
 }
 
 .contenido h1 {
@@ -76,7 +78,7 @@ body {
 .galeria {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 2dvh;
 }
 
 .seccion {
@@ -86,16 +88,19 @@ body {
 .seccion h2,
 .seccion h1 {
     margin-bottom: 20px;
-    color: #263238;
+    color: #ffffff;
 }
 
 .seccion p {
     font-size: 1.1rem;
-    color: #455a64;
+    color: #ffffff;
+    font-weight: 500;
 }
 
 .seccion-inicio {
-    background-color: #e8f5e9;
+    background-image: url(img/breaking-bad-background-bgpiwr9axx0winnl.jpg);
+    background-size: cover;
+    background-position: 20% 18%;
     padding: 20px;
     border-radius: 10px;
 }
@@ -122,25 +127,66 @@ body {
     color: #ffffff;
     text-shadow: #000 1px 1px 2px;
     flex: 2;
+    transition:  0.3s ease all;
+}
+
+.tarjeta-walter:hover {
+    background-position: 50% 50%;
+    transform: scale(1.05);
+    background-color: #b2ebf2;
+    color: #ffffff;
+    font-weight: 900;
 }
 
 .tarjeta-jesse {
     background-image: url(img/images.jfif);
     background-position: 50% 40%;
-    color: #000;
+    background-size: cover;
+    color: #ffffff;
     flex: 2;
+    transition: 0.3s ease all;
+}
+
+.tarjeta-jesse:hover {
+    background-position: 50% 50%;
+    transform: scale(1.05);
+    background-color: #b2ebf2;
+    color: #ffffff;
+    font-weight: 900;
 }
 
 .tarjeta-saul {
-    background-color: #ffeb3b;
-    color: #000;
+    background-image: url(img/images\ \(1\).jfif);
+    background-position: 50% 40%;
+    background-size: cover;
+    color: #ffffff;
     flex: 2;
+    transition: 0.3s ease all;
+}
+
+.tarjeta-saul:hover {
+    background-position: 50% 50%;
+    transform: scale(1.05);
+    background-color: #b2ebf2;
+    color: #ffffff;
+    font-weight: 900;
 }
 
 .tarjeta-gus {
-    background-color: #ef9a9a;
-    color: #000;
-    flex: 1;
+    background-image: url(img/maxresdefault.jpg);
+    background-position: 50% 40%;
+    background-size: cover;
+    color: #ffffff;
+    flex: 2;
+    transition: 0.5s ease all;
+}
+
+.tarjeta-gus:hover {
+    background-image: url(img/gus-fring-2811223.webp);
+    transform: scale(1.05);
+    background-color: #b2ebf2;
+    color: #ffffff;
+    font-weight: 900;
 }
 
 .tarjeta-hank {
