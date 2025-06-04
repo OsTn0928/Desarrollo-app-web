@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background-color: #003f13;
+    background-color: #0f301d;
 }
 
 .contenedor {
@@ -72,7 +72,6 @@ body {
 
 /* CONTENIDO */
 .contenido {
-    background-color: #0f301d;
     margin-left: 300px; /* Ajusta según el ancho de la barra lateral */
     flex: 4;
     padding: 30px;
@@ -150,6 +149,7 @@ body {
     transform: scale(1.05);
     background-color: #b2ebf2;
     color: #ffffff;
+    flex: 3;
     font-weight: 900;
 }
 
@@ -167,6 +167,7 @@ body {
     transform: scale(1.05);
     background-color: #b2ebf2;
     color: #ffffff;
+    flex: 3;
     font-weight: 900;
 }
 
@@ -184,6 +185,7 @@ body {
     transform: scale(1.05);
     background-color: #b2ebf2;
     color: #ffffff;
+    flex: 3;
     font-weight: 900;
 }
 
@@ -201,6 +203,7 @@ body {
     transform: scale(1.05);
     background-color: #b2ebf2;
     color: #ffffff;
+    flex: 4;
     font-weight: 900;
 }
 
@@ -219,6 +222,8 @@ body {
     background-color: #b2ebf2;
     color: #12cc21;
     font-weight: 900;
+    flex: 2;
+    text-shadow: #000000 1px 1px 5px;
 }
 
 .tarjeta-frase2 {
@@ -235,6 +240,8 @@ body {
     background-color: #b2ebf2;
     color: #f50000;
     font-weight: 900;
+    flex: 2;
+    text-shadow: #000000 1px 1px 5px;
 } 
 
 .tarjeta-frase3 {
@@ -252,6 +259,8 @@ body {
     background-color: #b2ebf2;
     color: #d49011;
     font-weight: 900;
+    flex: 3;
+    text-shadow: #000000 1px 1px 5px;
 }
 
 .tarjeta-frase4 {
@@ -269,7 +278,82 @@ body {
     background-color: #b2ebf2;
     color: #000000;
     font-weight: 900;
+    flex: 2;
+    text-shadow: #000000 1px 1px 5px;
 }
 
 .tarjeta-lugar1 {
+    background-image: url(img/casa-walter.jfif);
+    background-position: 50% 0%;
+    background-size: cover;
+    flex: 1;
+    transition: 0.5s ease all;
+}
+
+.tarjeta-lugar1:hover {
+    background-position: 50% 70%;
+    transform: scale(1.05);
+    background-color: #b2ebf2;
+    color: #ffffff;
+    font-weight: 900;
+    flex: 2;
+    text-shadow: #000000 1px 1px 5px;
+}
+
+.tarjeta-lugar2 {
+    background-image: url(img/rv-DESERT.webp);
+    background-position: 50% 0%;
+    background-size: cover;
+    flex: 1;
+    transition: 0.5s ease all;
+}
+
+.tarjeta-lugar2:hover {
+    background-position: 50% 70%;
+    transform: scale(1.05);
+    background-color: #b2ebf2;
+    color: #ffffff;
+    font-weight: 900;
+    flex: 2;
+    text-shadow: #000000 1px 1px 5px;
+}
+
+.tarjeta-lugar3 {
+    background-image: url(img/474316-pollos-hermanos-breaking-bad-pueden-convertirse-restaurante-real.webp);
+    background-position: 50% 0%;
+    background-size: cover;
+    flex: 1;
+    transition: 0.5s ease all;
+}
+
+.tarjeta-lugar3:hover {
+    background-position: 50% 70%;
+    transform: scale(1.05);
+    background-color: #b2ebf2;
+    color: #fffb00;
+    font-weight: 900;
+    flex: 2;
+    text-shadow: #000000 1px 1px 5px;
+}
+
+.tarjeta-lugar4 {
+    background-image: url(img/Superlab.webp);
+    background-position: 50% 0%;
+    background-size: cover;
+    flex: 1;
+    transition: 0.5s ease all;
+}
+
+.tarjeta-lugar4:hover {
+    background-position: 50% 70%;
+    transform: scale(1.05);
+    background-color: #b2ebf2;
+    color: #ff0505;
+    font-weight: 900;
+    flex: 2;
+    text-shadow: #000000 1px 1px 5px;
+}
+
+.seccion-lugares {
+    padding-bottom: 5dvh;
 }
