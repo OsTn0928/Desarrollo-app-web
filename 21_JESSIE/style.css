@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background-color: #e9f5f2;
+    background-color: #003f13;
 }
 
 .contenedor {
@@ -32,10 +32,20 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    transition: all 1s ease;
+}
+
+.nav:hover {
+    background-position: 10% 50%;
 }
 
 .logo {
     margin-bottom: 20px;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
 }
 
 .nav ul {
@@ -100,9 +110,14 @@ body {
 .seccion-inicio {
     background-image: url(img/breaking-bad-background-bgpiwr9axx0winnl.jpg);
     background-size: cover;
-    background-position: 20% 18%;
+    background-position: 20% 100%;
     padding: 20px;
     border-radius: 10px;
+    transition: all 2s ease;
+}
+
+.seccion-inicio:hover {
+    background-position: 20% 18%;
 }
 
 .tarjeta {
@@ -254,4 +269,7 @@ body {
     background-color: #b2ebf2;
     color: #000000;
     font-weight: 900;
+}
+
+.tarjeta-lugar1 {
 }
