@@ -62,10 +62,10 @@ body {
 
 /* CONTENIDO */
 .contenido {
+    background-color: #0f301d;
     margin-left: 300px; /* Ajusta según el ancho de la barra lateral */
     flex: 4;
     padding: 30px;
-    background-image: url(img/0vP82EWKFmjSc0I1BHsDuRF3IdRm623DMajQGKsyZGQ.webp);
     background-size: cover;
     background-position: 0% 50%;
 }
@@ -189,38 +189,69 @@ body {
     font-weight: 900;
 }
 
-.tarjeta-hank {
-    background-color: #ce93d8;
-    color: #1a1a1a;
+.tarjeta-frase1 {
+    background-image: url(img/SayMyName.jpeg);
+    background-position: 50% 0%;
+    background-size: cover;
     flex: 1;
+    transition: 0.3s ease all;
+    color: #b2ebf2;
 }
 
-.tarjeta-skyler {
-    background-color: #ffe082;
-    color: #000;
-    flex: 1;
+.tarjeta-frase1:hover {
+    background-position: 50% 70%;
+    transform: scale(1.05);
+    background-color: #b2ebf2;
+    color: #12cc21;
+    font-weight: 900;
 }
 
-.tarjeta-rv {
-    background-color: #bcaaa4;
-    color: #000;
+.tarjeta-frase2 {
+    background-image: url(img/ididitforme.jpg);
+    background-position: 50% 0%;
+    background-size: cover;
     flex: 1;
+    transition: 0.3s ease all;
 }
 
-.tarjeta-locacion {
-    background-color: #b0bec5;
-    color: #000;
-    flex: 1;
-}
+.tarjeta-frase2:hover {
+    background-position: 100% 70%;
+    transform: scale(1.05);
+    background-color: #b2ebf2;
+    color: #f50000;
+    font-weight: 900;
+} 
 
-.tarjeta-frase {
-    background-color: #c5e1a5;
-    color: #000;
-    flex: 1;
-}
-
-.tarjeta-lab {
-    background-color: #90caf9;
-    color: #000;
+.tarjeta-frase3 {
+    background-image: url(img/NOOOO.webp);
+    background-position: 50% 0%;
+    background-size: cover;
     flex: 2;
+    transition: 0.3s ease all;
+    color: #b2ebf2;
+}
+
+.tarjeta-frase3:hover {
+    background-position: 50% 70%;
+    transform: scale(1.05);
+    background-color: #b2ebf2;
+    color: #d49011;
+    font-weight: 900;
+}
+
+.tarjeta-frase4 {
+    background-image: url(img/i\ won.jpg);
+    background-position: 50% 0%;
+    background-size: cover;
+    flex: 1;
+    transition: 0.3s ease all;
+    color: #000000;
+}
+
+.tarjeta-frase4:hover {
+    background-position: 50% 70%;
+    transform: scale(1.05);
+    background-color: #b2ebf2;
+    color: #000000;
+    font-weight: 900;
 }
