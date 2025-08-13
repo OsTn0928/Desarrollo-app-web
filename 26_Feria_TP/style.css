@@ -19,7 +19,7 @@ body {
 }
 
 .header {
-    background: var(--color-azul);
+    background: var(--color-oscuro);
     color: var(--color-blanco);
     display: flex;
     justify-content: space-between;
@@ -54,8 +54,14 @@ body {
 }
 
 .hero {
-    background: var(--color-verde);
-    color: var(--color-blanco);
+    background-image: url(img/20250113141113_etiquetas_original_imagen.webp);
+    background-size: cover;
+    background-position: 50% 50%;
+    color: var(--color-oscuro);
+    text-shadow: #B1B6A6 0dvh 0dvh 3dvh;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     text-align: center;
     padding: 4rem 2rem;
 }
@@ -83,7 +89,7 @@ body {
     background: var(--color-blanco);
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .features-section {
@@ -147,9 +153,46 @@ img {
     max-width: 55dvh;
     height: auto;
     position: absolute;
-    translate: -15% -50%;
+    translate: -17% -50%;
     border-color: #000000 5px solid;
 }
+
+#feature-1 {
+    background: var(--color-blanco);
+    transition: all 0.3s ease;
+}
+
+#feature-1:hover {
+    background-color: var(--color-azul);
+}
+
+#feature-2 {
+    background: var(--color-blanco);
+    transition: all 0.3s ease;
+}
+
+#feature-2:hover {
+    background-color: var(--color-azul);
+}
+
+#feature-3 {
+    background: var(--color-blanco);
+    transition: all 0.3s ease;
+}
+
+#feature-3:hover {
+    background-color: var(--color-azul);
+}
+
+#feature-4 {
+    background: var(--color-blanco);
+    transition: all 0.3s ease;
+}
+
+#feature-4:hover {
+    background-color: var(--color-azul);
+}
+
 
 @media (max-width: 768px) {
     .nav ul {
