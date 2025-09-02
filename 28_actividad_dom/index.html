@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Estudiantes</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+    <main>
+        <h2>Registro de Estudiante</h2>
+        <form id="formEstudiante">
+            <label>Nombre:
+                <input type="text" id="nombre" required>
+            </label><br><br>
+
+            <label>Edad:
+                <input type="number" id="edad" min="14" max="100" required>
+            </label><br><br>
+
+            <label>Curso:
+                <select id="curso">
+                    <option value="">Seleccione...</option>
+                    <option value="3° Medio">3° Medio</option>
+                    <option value="4° Medio">4° Medio</option>
+                </select>
+            </label><br><br>
+
+            Jornada:
+            <label><input type="radio" name="jornada" value="Mañana"> Mañana</label>
+            <label><input type="radio" name="jornada" value="Tarde"> Tarde</label><br><br>
+
+            <label>
+                <input type="checkbox" id="aceptaReglamento"> Acepto el reglamento
+            </label><br><br>
+
+            <button type="submit">Registrar</button>
+            <button type="button" id="limpiar">Limpiar</button>
+        </form>
+
+        <p class="error" id="mensajeError"></p>
+        <p class="resultado" id="mensajeResultado"></p>
+        <p class="resultado" id="resumen"></p>
+    </main>
+</body>
+<script src="static/js/main.js"></script>
+
+</html>

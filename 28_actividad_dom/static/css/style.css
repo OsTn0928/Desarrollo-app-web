@@ -1,0 +1,205 @@
+/* style.css — actualizado: mejor soporte visual para <select> y <option> */
+
+/* (mantén tu @import y :root tal como los tenías arriba) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg-1: #100007;
+  --bg-2: #200116;
+
+  --brand-dark: #0E1428;
+  --brand-accent: #ff0022;
+  --brand-accent-dark: #cc001d;
+
+  --radius: 14px;
+  --glass-blur: 10px;
+  --text: #ffffff;
+  --muted: rgba(255,255,255,0.75);
+  --field-bg: rgba(255,255,255,0.03);
+  --field-border: rgba(255,255,255,0.06);
+}
+
+/* reset y base */
+* { box-sizing: border-box; }
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--bg-1) 12%, var(--bg-2) 88%);
+}
+
+/* centrar main vertical + horizontal */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* contenedor principal (glassmorphism) */
+main {
+  width: min(920px, 94%);
+  border-radius: var(--radius);
+  padding: 30px;
+  position: relative;
+  overflow: visible; /* importante para que el dropdown no se corte en algunos casos */
+  background: linear-gradient(180deg, rgba(32,1,18,0.36), rgba(16,0,7,0.22));
+  border: 1px solid rgba(255,255,255,0.06);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(120%);
+  backdrop-filter: blur(var(--glass-blur)) saturate(120%);
+  box-shadow: 0 18px 50px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+/* barra decorativa lateral */
+main::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+  pointer-events: none;
+}
+
+/* tipografía básica */
+h2 { margin: 0 0 10px 0; color: var(--text); letter-spacing: -0.02em; font-weight: 600; }
+p, label { color: var(--muted); margin: 0 0 12px 0; font-size: 0.95rem; }
+
+/* ===========================
+   Inputs / select (mejorados)
+   =========================== */
+
+/* inputs básicos */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--field-border);
+  background: var(--field-bg);
+  color: var(--text);
+  outline: none;
+  transition: box-shadow .16s ease, border-color .16s ease, transform .06s ease;
+  font-size: 0.95rem;
+}
+
+/* SELECT: apariencia consistente y flecha personalizada */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  width: 100%;
+  padding: 10px 40px 10px 12px; /* espacio para la flecha a la derecha */
+  border-radius: 10px;
+  border: 1px solid var(--field-border);
+  background-color: transparent;
+  /* fondo oscuro dentro del control para que se integre */
+  background-image:
+    linear-gradient(0deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'><path d='M7 10l5 5 5-5' stroke='%23FF0022' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center, right 12px center;
+  background-size: 18px, 18px;
+  color: var(--text);
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow .14s ease, transform .06s ease;
+  font-size: 0.95rem;
+  /* para que el control se vea oscuro (algunos navegadores ignoran color en options) */
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: none;
+}
+
+/* Forzar color de fondo/foreground en opciones (esto funciona en la mayoría de navegadores, aunque algunos OS lo ignoran) */
+select option {
+  background: linear-gradient(180deg, var(--brand-dark), rgba(14,20,40,0.95));
+  color: var(--text);
+  padding: 8px 12px;
+}
+
+/* quitar flecha nativa en IE/Edge */
+select::-ms-expand { display: none; }
+
+/* focus accesible */
+select:focus {
+  box-shadow: 0 8px 30px rgba(255,0,34,0.07);
+  border-color: rgba(255,0,34,0.28);
+  transform: translateY(-1px);
+}
+
+/* Radios y check: pequeño ajuste visual */
+input[type="radio"], input[type="checkbox"] {
+  margin-right: 6px;
+  accent-color: var(--brand-accent);
+}
+
+/* saltos mínimos para mantener el layout claro (respeta tus <br><br> si los usas) */
+label { display: inline-block; }
+
+/* botones: sin cambios importantes (mantén como antes) */
+button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(180deg, var(--brand-accent), var(--brand-accent-dark));
+  border: none;
+  box-shadow: 0 10px 30px rgba(255,0,34,0.12), 0 2px 6px rgba(0,0,0,0.35);
+  transition: transform .12s cubic-bezier(.2,.9,.2,1), box-shadow .12s ease;
+  user-select: none;
+}
+
+#limpiar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--brand-dark), rgba(6,10,20,0.95));
+  border: 1px solid rgba(255,0,34,0.06);
+  box-shadow: 0 8px 26px rgba(4,6,14,0.6);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+/* mensajes */
+.error {
+  color: #ff7a7a;
+  font-weight: 700;
+  margin-top: 12px;
+  display: block;
+}
+.resultado {
+  color: #9be06b;
+  font-weight: 700;
+  margin-top: 12px;
+  display: block;
+}
+#resumen {
+  margin-top: 10px;
+  color: var(--muted);
+  font-weight: 600;
+  white-space: pre-line;
+}
+
+/* responsive */
+@media (max-width: 720px) {
+  body { padding: 20px 12px; }
+  main { padding: 20px; border-radius: 12px; }
+  button[type="submit"], #limpiar { width: 100%; justify-content: center; margin-bottom: 8px; }
+  select { padding-right: 44px; } /* más espacio para la flecha en móvil */
+}
