@@ -1,0 +1,28 @@
+* {
+    font-family: cursive;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #ffffff;
+    margin-left: 15dvh;
+    margin-right: 15dvh;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c1c1c1;
+    height: 12dvh;
+    padding-left: 5dvh;
+    padding-right: 5dvh;
+}
+
+.cotain-master {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
