@@ -8,39 +8,64 @@
     <link rel="stylesheet" href="/29_This_JS/Ejercicios_this_dojonary/static/css/style.css">
 </head>
 
-<body>
+<!--Encabezado-->
     <header>
         <h1 class="Titulo">Dojonary</h1>
         <input type="text" id="search" placeholder="Search">
-        <button onclick="login(this)">Log In</button>
+        <button onclick="pasarLogInaLogOut(this)" class="login">Login</button>
     </header>
 
-    <div class="cotain-master">
+    <!-- Contenedor principal -->
+        <main class="master">
+
+            <!--Menu Izquiedordo -->
+                <article>
+                    <div class="row-1">
+                        
+                        <div class="column-1">
+                            <h2>ninja</h2>
+                            <h3>noun</h3>
+                            <p>Plural: <span>ninjas</span></p>
+                            <button id="likeBtn2" onclick="sumarLike(this)">13 Likes</button>
+                        </div>
+
+                        <div class="column-2">
+                            <h3>A practitioner skilled in the <span>Japanese</span> art of <span>injutsu</span></h3>
+                        </div>
+                    </div>
+
+                    <div class="row-2">
+
+                        <div class="column-1">
+                            <h2>ninja</h2>
+                            <h3>noun</h3>
+                            <p>Plural: <span>ninjas</span></p>
+                            <button id="likeBtn2" onclick="sumarLike(this)">37 Likes</button>
+                        </div>
+
+                        <div class="column-2">
+                            <h3>A <span>programmer</span> who breaks down problems with <span>zen</span>-like focus</h3>
+                        </div>
+                    </div>
+                </article>
+
+            <!--Contenedor de las tarjetas -->
+                <aside>
+                    <section>
+                        <div class="up">
+                            <h2>Dojonary is defined by <span>YOU</span></h2>
+                        </div>
+                        <div class="down">
+                            <button onclick="eliminarbtn(this)" class="Definition">Add Definition</button>
+                        </div>
+                    </section>
+                </aside>
+
+        </main>
 
 
 
-        <div class="column1">
-            <div class="block1">
-                <h2>ninja</h2>
-            </div>
-            <div class="block2">
-                <h2>ninja</h2>
-            </div>
-        </div>
-        <div class="column2">
-            <div class="block3">
-                <h2>Dojonary is defined by <span class="span_h2_block3">YOU</span></h2>
-                <button onclick="Add " ></button>
-            </div>
-        </div>
-
-
-
-
-
-
-        <script src="/29_This_JS/Ejercicios_this_dojonary/js/script.js"></script>
-    </div>
+        <script src="/29_This_JS/Ejercicios_this_dojonary/static/js/script.js"></script>
 </body>
 
 </html>
