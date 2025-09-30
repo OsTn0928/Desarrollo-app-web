@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25dvh;
+    margin-right: 25dvh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    border-top: solid 4px #9900ff;
+    margin-bottom: 4dvh;
+}
+
+header div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    letter-spacing: 0.5dvh;
+    font-weight: 300;
+}
+
+header input {
+    padding: 5px;
+    border: solid 3px #000000;
+    width: 60%;
+}
+
+header button {
+    padding: 3px 15px;
+    border: solid 3px #000000;
+    background-color: #9900ff;
+    color: white;
+    cursor: pointer;
+    font-size: 100%;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;    
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.col-l {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 2;                  
+    min-width: 0;           
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    margin-top: 1dvh;
+}
+
+.user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.col-r {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;                 
+    max-width: 360px;       
+}
+
+.col-r h3 {
+    font-size: 3.5dvh;
+    border-bottom: solid 3px #000000;
+    padding-bottom: 1dvh;
+    margin-bottom: 1dvh;
+}
+
+.placeholder {
+    width: 100%;
+}
+.placeholder svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-small {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.vid-s {
+    width: 90px;  
+    height: auto;
+    display: block;
+}
