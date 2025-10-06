@@ -134,7 +134,7 @@ header button:hover {
 }
 
 .vid-s {
-    width: 90px;
+    width: 20dvh;
     height: auto;
     display: block;
 }
