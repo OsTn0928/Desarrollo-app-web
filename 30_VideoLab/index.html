@@ -29,7 +29,7 @@
         <div class="col-l">
 
             <!-- this is a placeholder replace it with a real video -->
-            <video class="placeholder" src="resources/video/Arcángel - THC (Video Oficial)   Papi Arca.mp4" controls autoplay loop>
+            <video id="videoGrande" class="placeholder" src="resources/video/Arcángel - THC (Video Oficial)   Papi Arca.mp4" controls autoplay loop>
                 Your browser does not support the video tag.>
                 
             </video>
@@ -55,22 +55,26 @@
             <h3 class="sub-header">Up Next</h3>
 
             <div class="video-small">
-                <img src="resources/images/DF.png" alt="video placeholder" class="vid-s" onmouseover="onemauseover(this)" >
+                <video onclick="clickVideo(this)" src="resources/video/Arcangel - Don Francisco (Video Oficial)   Sr. Santos II Sueños de Grandeza.mp4" alt="video placeholder" class="vid-s" onmouseover="videoPlay(this)" onmouseout="videoPause(this)"  loop muted>
+                </video>
                 <span class="video-title">Don Francisco (Video Oficial)</span>
             </div>
 
             <div class="video-small">
-                <img src="resources/images/MT.jpg" alt="video placeholder" class="vid-s">
+                <video onclick="clickVideo(this)" src="resources/video/Arcangel - Mucho Ticket (Video Oficial)   Sr. Santos II Sueños de Grandeza.mp4" alt="video placeholder" class="vid-s" onmouseover="videoPlay(this)" onmouseout="videoPause(this)"  loop muted>
+                </video>
                 <span class="video-title">Mucho Ticket (Video Oficial)</span>
             </div>
 
             <div class="video-small">
-                <img src="resources/images/FF.jpg" alt="video placeholder" class="vid-s">
+                <video onclick="clickVideo(this)" src="resources/video/Arcangel, Neutro Shorty - Flash Foto (Video Oficial)   Sr. Santos II Sueños de Grandeza.mp4" alt="video placeholder" class="vid-s" onmouseover="videoPlay(this)" onmouseout="videoPause(this)"  loop muted>
+                </video>
                 <span class="video-title">Flash Foto (Video Oficial)</span>
             </div>
 
             <div class="video-small">
-                <img src="resources/images/ETS.jpg" alt="video placeholder" class="vid-s">
+                <video onclick="clickVideo(this)" src="resources/video/Arcangel, Yan Block - En Tus Sueños (Video Oficial)   Sr. Santos II Sueños de Grandeza.mp4" alt="video placeholder" class="vid-s" onmouseover="videoPlay(this)" onmouseout="videoPause(this)"  loop muted >
+                </video>
                 <span class="video-title">En Tus Sueños (Video Oficial)</span>
             </div>
 
