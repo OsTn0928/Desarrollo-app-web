@@ -1,6 +1,6 @@
 function clickVideo (elemento) {
   let videoGrande = document.getElementById("videoGrande");
-  let sourceVideoGrande = videoGrande.scroll;
+  let sourceVideoGrande = videoGrande.src;
     videoGrande.src = elemento.src;
     elemento.src = sourceVideoGrande; 
 }
