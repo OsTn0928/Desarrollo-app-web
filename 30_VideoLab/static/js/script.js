@@ -2,7 +2,7 @@ function clickVideo (elemento) {
   let videoGrande = document.getElementById("videoGrande");
   let sourceVideoGrande = videoGrande.src;
     videoGrande.src = elemento.src;
-    elemento.src = sourceVideoGrande; 
+    elemento.src = sourceVideoGrande;
 }
 
 function videoPlay (elemento) {
@@ -12,3 +12,4 @@ function videoPlay (elemento) {
 function videoPause (elemento) {
   elemento.pause();
 }
+
