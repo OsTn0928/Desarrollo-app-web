@@ -47,6 +47,10 @@ header nav a {
     transition: all 0.3s ease;
 }
 
+header nav a:hover {
+    transform: scale(1.1);
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -95,6 +99,16 @@ main {
     transition: all 0.3s ease;
     border-radius: 5px;
 }
+
+#pre-header div select:focus {
+    outline: none;
+    box-shadow: 0.5dvh 0.5dvh  black;
+}
+
+#pre-header div select:hover {
+    box-shadow: 0.5dvh 0.5dvh  black;
+}
+
 
 h3 {
     font-size: 30px;
@@ -165,13 +179,45 @@ h3 {
     transition: all 0.3s ease;
 }
 
+
+
 .acept-coockies {
     display: flex;
+    position: fixed;
+    left: 23%;
+    bottom: 5dvh;
     width: auto;
-    margin-left: 20dvh;
-    margin-right: 20dvh;
     align-items: center;
     justify-content: space-around;
     background-color: #d1d1d1;
     border: solid 3px #000000;
+    padding: 2dvh;
+}
+
+.acept-coockies p {
+    color: #000000;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    width: 80dvh;
+}
+
+.acept-coockies p span {
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.acept-coockies button {
+    background-color: #9fc5f8;
+    border: solid 2px #000000;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 2dvh;
+    margin-left: 2dvh;
+    transition: all 0.3s ease;
+}
+
+.acept-coockies button:hover {
+    background-color: #6fa1f7;
+    box-shadow: 0.5dvh 0.5dvh  black;
 }
