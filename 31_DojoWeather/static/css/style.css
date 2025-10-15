@@ -98,15 +98,12 @@ main {
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 5px;
-}
-
-#pre-header div select:focus {
     outline: none;
-    box-shadow: 0.5dvh 0.5dvh  black;
 }
 
 #pre-header div select:hover {
     box-shadow: 0.5dvh 0.5dvh  black;
+    outline: none;
 }
 
 
@@ -194,6 +191,13 @@ h3 {
     padding: 2dvh;
 }
 
+.acept-coockies img {
+    width: 10dvh;
+    height: auto;
+    margin-right: 2dvh;
+    transition: all 0.3s ease;
+}
+
 .acept-coockies p {
     color: #000000;
     font-weight: 400;
@@ -205,6 +209,7 @@ h3 {
     text-decoration: underline;
     cursor: pointer;
     transition: all 0.3s ease;
+    color: #0051ff;
 }
 
 .acept-coockies button {
@@ -215,6 +220,7 @@ h3 {
     margin-right: 2dvh;
     margin-left: 2dvh;
     transition: all 0.3s ease;
+    outline: none;
 }
 
 .acept-coockies button:hover {
