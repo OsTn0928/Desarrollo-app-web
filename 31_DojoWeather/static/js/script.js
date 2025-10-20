@@ -69,3 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+function cambioCiudad(elemento) {
+    alert ("Cambiando ciudad a: " + elemento.textContent);
+}
