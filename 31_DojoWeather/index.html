@@ -2,10 +2,10 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DojoWeather</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/style.css" />
 </head>
 
 <body>
@@ -17,6 +17,7 @@
             <a href="#">Dallas</a>
         </nav>
     </header>
+
     <main>
         <section id="pre-header">
             <h2>San Jose</h2>
@@ -24,7 +25,7 @@
                 <p>show temperature in</p>
                 <select id="temperature-unit">
                     <option value="F">°F</option>
-                    <option value="C">°C</option>
+                    <option value="C" selected>°C</option>
                 </select>
             </div>
         </section>
@@ -34,47 +35,54 @@
                 <h3>Today</h3>
                 <img src="resources/images/some_rain.png" alt="#"><span>some rain</span>
                 <div>
-                    <p id="p-red">24°</p>
-                    <p id="p-blue">18°</p>
+                    <p class="p-red">24°</p>
+                    <p class="p-blue">18°</p>
                 </div>
             </div>
+
             <div class="cages">
                 <h3>Tomorrow</h3>
                 <img src="resources/images/some_sun.png" alt=""><span>some sun</span>
                 <div>
-                    <p id="p-red">27°</p>
-                    <p id="p-blue">19°</p>
+                    <p class="p-red">27°</p>
+                    <p class="p-blue">19°</p>
                 </div>
             </div>
+
             <div class="cages">
                 <h3>Friday</h3>
                 <img src="resources/images/some_clouds.png" alt=""><span>some clouds</span>
                 <div>
-                    <p id="p-red">21°</p>
-                    <p id="p-blue">16°</p>
+                    <p class="p-red">21°</p>
+                    <p class="p-blue">16°</p>
                 </div>
             </div>
+
             <div class="cages">
-                <h3>saturday</h3>
+                <h3>Saturday</h3>
                 <img src="resources/images/some_sun.png" alt=""><span>some sun</span>
                 <div>
-                    <p id="p-red">26°</p>
-                    <p id="p-blue">21°</p>
+                    <p class="p-red">26°</p>
+                    <p class="p-blue">21°</p>
                 </div>
             </div>
         </div>
     </main>
-    
+
     <div class="acept-coockies">
-        <img src="resources/images/cookie.png" alt="Coockie">
+        <img src="resources/images/cookie.png" alt="Cookie">
         <div>
             <h4>Stop! Cookie time</h4>
-            <p>We use cookies (sadly not the edible ones) to personalize content and ads, to provide social media features and to analyse our traffic. <span>Read more...</span></p>
+            <p>
+                We use cookies (sadly not the edible ones) to personalize content and ads, to provide social media
+                features and to analyse our traffic.
+                <span>Read more...</span>
+            </p>
         </div>
-        <button onchange="eliminaraBtnAceptCoockies(this)" id="btn-accept">I Accept</button>
+        <button id="btn-accept">I Accept</button>
     </div>
 
+    <script src="static/js/script.js"></script>
 </body>
-<script src="static/js/script.js"></script>
 
 </html>
