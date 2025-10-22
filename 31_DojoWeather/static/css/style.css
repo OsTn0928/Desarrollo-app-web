@@ -160,7 +160,7 @@ h3 {
     transition: all 0.3s ease;
 }
 
-#p-red {
+.p-red {
     color: #ff0000;
     font-weight: 700;
     font-size: 25px;
@@ -168,7 +168,7 @@ h3 {
     transition: all 0.3s ease;
 }
 
-#p-blue {
+.p-blue {
     color: #0000ff;
     font-weight: 700;
     font-size: 25px;
@@ -228,19 +228,6 @@ h3 {
     box-shadow: 0.5dvh 0.5dvh  black;
 }
 
-/* colores para mantener la semántica visual:
-   .p-red -> color del máximo (rojo)
-   .p-blue -> color del mínimo (azul) */
-
-.p-red {
-    color: #cf2a27; /* rojo */
-    font-weight: 600;
-}
-
-.p-blue {
-    color: #001aff; /* azul */
-    font-weight: 600;
-}
 
 
 

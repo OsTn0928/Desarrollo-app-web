@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfolio — Nombre Apellido</title>
+    <meta name="description" content="Portafolio web moderno — proyectos web y videos de los últimos 2 años">
+
+    <!--
+    Archivo único: index.html
+    - Contiene HTML, CSS (diseño oscuro) y JavaScript (interacciones).
+    - Reemplaza assets/videos/*.mp4 y assets/images/*.jpg según tus archivos.
+    - Para desempeño: usar thumbnails (jpg/png) en la grid y servir videos solo en el modal.
+  -->
+    <style>
+        /* ------------------------------
+       Paleta oscura y reseteo mínimo
+       ------------------------------ */
+        :root {
+            --bg: #0b1220;
+            /* fondo general */
+            --card: #0f1724;
+            /* tarjetas */
+            --accent: #6aa6ff;
+            /* acento azul pálido */
+            --muted: #9aa6b2;
+            /* texto secundario */
+            --text: #e6eef6;
+            /* texto principal */
+            --glass: rgba(255, 255, 255, 0.03);
+            --radius: 14px;
+            --ff: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--ff);
+            background: linear-gradient(180deg, var(--bg), #07101a);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.45;
+            scroll-behavior: smooth;
+        }
+
+        /* ------------------------------
+       Header / navegación
+       ------------------------------ */
+        header {
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(1100px, calc(100% - 32px));
+            background: linear-gradient(180deg, rgba(10, 16, 26, 0.75), rgba(10, 16, 26, 0.62));
+            box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 10px 18px;
+            z-index: 60;
+            backdrop-filter: blur(6px) saturate(120%);
+        }
+
+        .logo {
+            font-weight: 700;
+            letter-spacing: 0.2px
+        }
+
+        nav {
+            margin-left: auto;
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px
+        }
+
+        nav a:hover {
+            background: rgba(106, 166, 255, 0.08);
+            color: var(--accent);
+        }
+
+        .nav-toggle {
+            display: none;
+            border: 0;
+            background: transparent;
+            padding: 6px;
+            border-radius: 8px
+        }
+
+        /* ------------------------------
+       Hero
+       ------------------------------ */
+        .hero {
+            min-height: 72vh;
+            display: grid;
+            place-items: center;
+            padding-top: 86px
+        }
+
+        .hero-inner {
+            width: min(1100px, calc(100% - 48px));
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap
+        }
+
+        .hero-copy {
+            max-width: 560px
+        }
+
+        .kicker {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(106, 166, 255, 0.08), rgba(106, 166, 255, 0.04));
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 16px
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(28px, 4vw, 44px);
+            line-height: 1.05
+        }
+
+        p.lead {
+            color: var(--muted);
+            margin-top: 12px;
+            font-size: 16px
+        }
+
+        .cta-row {
+            margin-top: 22px;
+            display: flex;
+            gap: 12px
+        }
+
+        .btn {
+            border: 0;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer
+        }
+
+        .btn-primary {
+            background: linear-gradient(180deg, var(--accent), #3979ff);
+            color: var(--text);
+            box-shadow: 0 12px 40px rgba(67, 102, 255, 0.12)
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid rgba(106, 166, 255, 0.08)
+        }
+
+        .preview {
+            width: 420px;
+            max-width: 46%;
+            min-width: 240px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 18px 60px rgba(3, 8, 20, 0.6);
+            transform-origin: center;
+            transition: transform .6s cubic-bezier(.2, .9, .2, 1), filter .3s;
+            backdrop-filter: blur(6px)
+        }
+
+        .preview video {
+            display: block;
+            width: 100%;
+            height: auto
+        }
+
+        /* ------------------------------
+       Secciones y grid
+       ------------------------------ */
+        main {
+            width: 100%;
+            display: block;
+            padding: 36px 0
+        }
+
+        .container {
+            width: min(1100px, calc(100% - 48px));
+            margin: 0 auto
+        }
+
+        section {
+            padding: 64px 0
+        }
+
+        h2 {
+            margin: 0 0 10px 0;
+            font-size: 20px
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        .card {
+            background: var(--card);
+            padding: 12px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform .3s, box-shadow .3s;
+            box-shadow: 0 10px 40px rgba(3, 8, 20, 0.5)
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 26px 80px rgba(2, 8, 25, 0.7)
+        }
+
+        .thumb {
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-end;
+            padding: 12px
+        }
+
+        .play {
+            background: rgba(0, 0, 0, 0.55);
+            padding: 8px;
+            border-radius: 999px;
+            color: white;
+            font-weight: 700
+        }
+
+        .card h3 {
+            margin: 10px 0 4px 0;
+            font-size: 16px;
+            color: var(--text)
+        }
+
+        .meta {
+            font-size: 13px;
+            color: var(--muted)
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 28px
+        }
+
+        .about-card {
+            background: linear-gradient(180deg, var(--glass), rgba(255, 255, 255, 0.02));
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.02)
+        }
+
+        .form input,
+        .form textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            background: transparent;
+            color: var(--text);
+            margin-bottom: 10px
+        }
+
+        .form input::placeholder,
+        .form textarea::placeholder {
+            color: #7f8b96
+        }
+
+        .form button {
+            width: 100%
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 4, 8, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            z-index: 120;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .25s
+        }
+
+        .modal.open {
+            opacity: 1;
+            pointer-events: auto
+        }
+
+        .modal-content {
+            width: min(980px, 100%);
+            background: transparent;
+            border-radius: 12px;
+            overflow: hidden
+        }
+
+        .modal video {
+            width: 100%;
+            height: auto;
+            border-radius: 12px
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+            border-radius: 999px;
+            padding: 8px;
+            border: 0
+        }
+
+        /* Responsive */
+        @media (max-width:980px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .hero-inner {
+                gap: 24px
+            }
+
+            .preview {
+                max-width: 48%
+            }
+
+            .two-col {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media (max-width:640px) {
+            header {
+                left: 12px;
+                right: 12px;
+                transform: none;
+                width: calc(100% - 24px)
+            }
+
+            nav {
+                display: none
+            }
+
+            .nav-toggle {
+                display: block;
+                margin-left: auto
+            }
+
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            .preview {
+                display: none
+            }
+
+            .hero-inner {
+                align-items: flex-start
+            }
+        }
+
+        /* Reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity .7s ease, transform .7s cubic-bezier(.2, .9, .2, 1)
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none
+        }
+    </style>
+</head>
+
+<body>
+
+    <header role="banner">
+        <div style="display:flex;align-items:center;gap:10px">
+            <div class="logo">Nombre Apellido</div>
+            <div class="muted" style="font-size:13px">Desarrollo web • UI / UX</div>
+        </div>
+
+        <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+
+        <nav role="navigation" aria-label="Principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="inicio" class="hero">
+            <div class="hero-inner container">
+                <div class="hero-copy">
+                    <div class="kicker">Diseño & Código</div>
+                    <h1>Construyo experiencias web elegantes y funcionales</h1>
+                    <p class="lead">Portafolio con demos en video de los últimos 2 años — proyectos reales, enfoque en
+                        UX, rendimiento y accesibilidad.</p>
+                    <div class="cta-row">
+                        <button class="btn btn-primary"
+                            onclick="document.getElementById('proyectos').scrollIntoView({behavior:'smooth'})">Ver
+                            proyectos</button>
+                        <button class="btn btn-ghost"
+                            onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Contacto</button>
+                    </div>
+                </div>
+
+                <div class="preview reveal">
+                    <!-- Reemplaza poster/src por tus archivos -->
+                    <video muted playsinline autoplay loop preload="metadata" poster="assets/images/preview.jpg">
+                        <source src="assets/videos/preview-loop.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento <code>video</code>.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section id="proyectos">
+            <div class="container">
+                <h2>Proyectos recientes</h2>
+                <div class="muted">Videos y capturas de trabajo web (últimos 2 años)</div>
+
+                <div style="height:18px"></div>
+
+                <div class="grid" id="projects-grid">
+
+                    <!-- Tarjetas: actualiza data-video/data-poster con tus rutas -->
+                    <article class="card reveal" data-video="assets/videos/project1.mp4"
+                        data-poster="assets/images/project1.jpg">
+                        <div class="thumb" style="background-image:url('assets/images/project1.jpg')">
+                            <div class="play">▶︎ Ver</div>
+                        </div>
+                        <h3>Nombre del proyecto 1</h3>
+                        <div class="meta">HTML • CSS • JS — 2024</div>
+                    </article>
+
+                    <article class="card reveal" data-video="assets/videos/project2.mp4"
+                        data-poster="assets/images/project2.jpg">
+                        <div class="thumb" style="background-image:url('assets/images/project2.jpg')">
+                            <div class="play">▶︎ Ver</div>
+                        </div>
+                        <h3>Nombre del proyecto 2</h3>
+                        <div class="meta">React (demo) • Integración — 2025</div>
+                    </article>
+
+                    <article class="card reveal" data-video="assets/videos/project3.mp4"
+                        data-poster="assets/images/project3.jpg">
+                        <div class="thumb" style="background-image:url('assets/images/project3.jpg')">
+                            <div class="play">▶︎ Ver</div>
+                        </div>
+                        <h3>Nombre del proyecto 3</h3>
+                        <div class="meta">UI / UX • Prototipo — 2024</div>
+                    </article>
+
+                    <article class="card reveal" data-video="assets/videos/project4.mp4"
+                        data-poster="assets/images/project4.jpg">
+                        <div class="thumb" style="background-image:url('assets/images/project4.jpg')">
+                            <div class="play">▶︎ Ver</div>
+                        </div>
+                        <h3>Nombre del proyecto 4</h3>
+                        <div class="meta">Landing • Performance — 2023</div>
+                    </article>
+
+                    <!-- Duplica o genera tarjetas según necesites -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MI -->
+        <section id="sobre-mi">
+            <div class="container">
+                <div class="two-col">
+                    <div class="about-card reveal">
+                        <h2>Sobre mí</h2>
+                        <p class="muted">Soy desarrollador web con enfoque en front-end, diseño de interfaces y
+                            experiencia de usuario. Me especializo en construir sitios rápidos, accesibles y con un
+                            cuidado estético.</p>
+
+                        <ul style="margin-top:12px">
+                            <li>Experiencia: 3+ años trabajando en proyectos web</li>
+                            <li>Tecnologías: HTML5, CSS3, JavaScript (vanilla)</li>
+                            <li>Habilidades: Diseño visual, optimización, buenas prácticas de accesibilidad</li>
+                        </ul>
+
+                        <p class="muted" style="margin-top:8px">Si quieres ver más detalles, descarga mi CV o contáctame
+                            directamente.</p>
+
+                        <div style="margin-top:12px;display:flex;gap:8px">
+                            <a class="btn btn-ghost" href="#contacto">Descargar CV</a>
+                            <a class="btn btn-primary" href="#contacto">Contactar</a>
+                        </div>
+                    </div>
+
+                    <aside class="reveal" style="height:100%;display:flex;align-items:center;justify-content:center;">
+                        <div style="width:100%;max-width:300px;text-align:center">
+                            <div
+                                style="width:160px;height:160px;border-radius:999px;margin:0 auto;background:linear-gradient(180deg,#0f1a24,#111827);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);box-shadow:0 12px 30px rgba(0,0,0,0.5)">
+                                Foto</div>
+                            <p class="muted" style="margin-top:12px">Diseño centrado en el usuario y código mantenible.
+                            </p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto">
+            <div class="container">
+                <h2>Contacto</h2>
+                <div class="muted">Escríbeme para oportunidades laborales o consultas académicas.</div>
+
+                <div style="height:18px"></div>
+
+                <div class="two-col">
+                    <form class="form reveal" onsubmit="event.preventDefault(); handleContact(event)">
+                        <input type="text" name="name" placeholder="Tu nombre" required>
+                        <input type="email" name="email" placeholder="Tu email" required>
+                        <textarea name="message" placeholder="Mensaje" rows="6" required></textarea>
+                        <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+                    </form>
+
+                    <div class="about-card reveal">
+                        <h3>Datos</h3>
+                        <p class="muted">Ubicación: Santiago, Chile</p>
+                        <p class="muted">Email: ejemplo@correo.com</p>
+                        <p class="muted">LinkedIn / GitHub: enlaces</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal de video -->
+    <div id="video-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-btn" aria-label="Cerrar" onclick="closeModal()">✕</button>
+            <video id="modal-video" controls playsinline preload="metadata">
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <script>
+        /* ------------------------------
+           JavaScript: Interactividad y efectos sutiles
+           ------------------------------ */
+
+        // Toggle menú simple (para mobile)
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            if (nav.style.display === 'flex') nav.style.display = '';
+            else nav.style.display = 'flex';
+        }
+
+        // Manejo de grid: al click en la tarjeta abrir modal y cargar video
+        document.addEventListener('click', (e) => {
+            const card = e.target.closest('.card');
+            if (card) {
+                const src = card.getAttribute('data-video');
+                const poster = card.getAttribute('data-poster');
+                if (src) openModalWith(src, poster);
+            }
+        });
+
+        const modal = document.getElementById('video-modal');
+        const modalVideo = document.getElementById('modal-video');
+
+        function openModalWith(src, poster) {
+            const source = modalVideo.querySelector('source');
+            source.src = src; // asigna la ruta del video
+            modalVideo.poster = poster || '';
+            modalVideo.load();
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden', 'false');
+            // pequeña pausa antes de reproducir para mejorar UX
+            setTimeout(() => modalVideo.play().catch(() => { }), 120);
+
+            // Añadimos ligera animación de escala al contenido para énfasis (CSS-free)
+            const content = modal.querySelector('.modal-content');
+            if (content && content.animate) {
+                content.animate([{ transform: 'scale(.98)', opacity: 0 }, { transform: 'scale(1)', opacity: 1 }], { duration: 260, easing: 'cubic-bezier(.2,.9,.2,1)' });
+            }
+        }
+
+        function closeModal() {
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+            // Pausamos y reseteamos
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+            // limpiar src para liberar memoria
+            const source = modalVideo.querySelector('source');
+            source.src = '';
+            modalVideo.load();
+        }
+
+        // Cerrar al presionar ESC o click fuera del video
+        modal.addEventListener('click', (ev) => { if (ev.target === modal) closeModal(); });
+        document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') closeModal(); });
+
+        // IntersectionObserver para efectos on-scroll (reveal)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Pequeño efecto: rota ligeramente el preview cuando el usuario hace scroll
+        const preview = document.querySelector('.preview');
+        window.addEventListener('scroll', () => {
+            if (!preview) return;
+            const rect = preview.getBoundingClientRect();
+            const mid = window.innerHeight / 2;
+            const delta = (rect.top - mid) / mid; // -1 .. 1
+            preview.style.transform = `perspective(800px) translateZ(0) rotateX(${Math.max(-6, Math.min(6, delta * 6))}deg)`;
+        }, { passive: true });
+
+        // Manejo simple del formulario (solo demostración)
+        function handleContact(e) {
+            const form = e.target;
+            const data = new FormData(form);
+            const name = data.get('name');
+            // Aquí podrías enviar a un servicio real (email/API)
+            alert('Gracias ' + name + " — Tu mensaje ha sido recibido (demo). Reemplaza esta función para conectar un backend real.");
+            form.reset();
+        }
+
+        // Nota de performance: si sirves muchos videos, usa thumbnails estáticos (jpg/png) y no múltiples <video> en grid.
+    </script>
+
+    <!--
+    EXPLICACIÓN RÁPIDA (comentarios):
+
+    1) Estructura
+      - Header fijo con navegación.
+      - Secciones: Inicio (hero), Proyectos (grid de tarjetas), Sobre mí, Contacto.
+      - Modal para reproducir videos bajo demanda.
+
+    2) Cómo reemplazar videos por reales
+      - Coloca tus archivos en una carpeta (ej: assets/videos/ y assets/images/).
+      - En las tarjetas <article class="card"> actualiza:
+          data-video="assets/videos/mi-video.mp4"
+          data-poster="assets/images/mi-thumb.jpg"
+      - El video de la preview en el hero también apunta a assets/videos/preview-loop.mp4 y poster.
+      - Para mejor rendimiento: usa thumbnails en la grid (jpg/png) y solo cargas el .mp4 cuando el usuario abre el modal.
+
+    3) Efectos y accesibilidad
+      - IntersectionObserver -> animaciones 'reveal' al hacer scroll.
+      - Hover y sombras en tarjetas para dar profundidad.
+      - Modal tiene aria-hidden toggle; mejora recomendada: gestionar el foco al abrir/cerrar.
+
+    4) Extensiones posibles
+      - Cargar tarjetas desde un JSON (dinámico).
+      - Añadir validación y envío real de formulario (API).
+      - Convertir a PWA o minificar assets para producción.
+
+    Si quieres, te devuelvo:
+      - la versión con carga dinámica desde `projects.json`, o
+      - la versión con foco gestionado y accesibilidad mejorada (trap focus).
+  -->
+
+</body>
+
+</html>
